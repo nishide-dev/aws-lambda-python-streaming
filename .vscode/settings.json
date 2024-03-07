@@ -1,0 +1,15 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.linting.lintOnSave": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--config=${workspaceFolder}/.flake8"
+    ],
+    "autoDocstring.docstringFormat": "google"
+}
