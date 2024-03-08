@@ -6,7 +6,7 @@ COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.1 /lambda-adapter /opt
 ENV PYTHONUNBUFFERED 1
 
 # copy the dependencies file to the working directory 
-COPY poetry.lock pyproject.toml ${LAMBDA_TASK_ROOT}
+COPY poetry.lock pyproject.toml ./
 RUN pip install poetry && \
     poetry config virtualenvs.create false && \
     poetry install --no-dev
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # copy the content of the local src directory to the working directory 
-COPY . ${LAMBDA_TASK_ROOT} 
+COPY . ./
 
 # command to run on container start 
-CMD ["src/app.handler"]
+CMD ["poetry", "run", "python", "src/app.py"]

@@ -27,8 +27,11 @@
 			]
 		}
 	},
-	"postCreateCommand": "poetry install",
-	"remoteUser": "root"
+	"postCreateCommand": "poetry install && poetry run python src/app.py",
+	"remoteUser": "root",
+	"forwardPorts": [
+		8080
+	]
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
