@@ -15,7 +15,7 @@ Resources:
       PackageType: Image
       MemorySize: 1024
       Architectures:
-        - arm64
+        - x86_64
       Environment:
         Variables:
           AWS_LWA_INVOKE_MODE: RESPONSE_STREAM
@@ -31,7 +31,7 @@ Resources:
           Resource: '*'
       Tracing: Active
     Metadata:
-      Dockerfile: Dockerfile
+      Dockerfile: lambda.Dockerfile
       DockerContext: .
       DockerTag: v1
 
